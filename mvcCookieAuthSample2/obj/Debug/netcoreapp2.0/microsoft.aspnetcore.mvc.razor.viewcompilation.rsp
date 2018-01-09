@@ -1,0 +1,15 @@
+D:\project\authSample\mvcCookieAuthSample2
+--output-path=obj\Debug\netcoreapp2.0\
+--application-name=mvcCookieAuthSample
+--content-root=D:\project\authSample\mvcCookieAuthSample2
+--file=D:\project\authSample\mvcCookieAuthSample2\Views\Account\Login.cshtml
+--file=D:\project\authSample\mvcCookieAuthSample2\Views\Account\Register.cshtml
+--file=D:\project\authSample\mvcCookieAuthSample2\Views\Admin\Index.cshtml
+--file=D:\project\authSample\mvcCookieAuthSample2\Views\Home\About.cshtml
+--file=D:\project\authSample\mvcCookieAuthSample2\Views\Home\Contact.cshtml
+--file=D:\project\authSample\mvcCookieAuthSample2\Views\Home\Index.cshtml
+--file=D:\project\authSample\mvcCookieAuthSample2\Views\Shared\Error.cshtml
+--file=D:\project\authSample\mvcCookieAuthSample2\Views\Shared\_Layout.cshtml
+--file=D:\project\authSample\mvcCookieAuthSample2\Views\Shared\_ValidationScriptsPartial.cshtml
+--file=D:\project\authSample\mvcCookieAuthSample2\Views\_ViewImports.cshtml
+--file=D:\project\authSample\mvcCookieAuthSample2\Views\_ViewStart.cshtml

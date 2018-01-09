@@ -1,0 +1,10 @@
+D:\project\authSample\CookeAuthSample\bin\Debug\netcoreapp2.0\CookeAuthSample.deps.json
+D:\project\authSample\CookeAuthSample\bin\Debug\netcoreapp2.0\CookeAuthSample.runtimeconfig.json
+D:\project\authSample\CookeAuthSample\bin\Debug\netcoreapp2.0\CookeAuthSample.runtimeconfig.dev.json
+D:\project\authSample\CookeAuthSample\bin\Debug\netcoreapp2.0\CookeAuthSample.dll
+D:\project\authSample\CookeAuthSample\bin\Debug\netcoreapp2.0\CookeAuthSample.pdb
+D:\project\authSample\CookeAuthSample\obj\Debug\netcoreapp2.0\CookeAuthSample.csproj.CoreCompileInputs.cache
+D:\project\authSample\CookeAuthSample\obj\Debug\netcoreapp2.0\CookeAuthSample.AssemblyInfoInputs.cache
+D:\project\authSample\CookeAuthSample\obj\Debug\netcoreapp2.0\CookeAuthSample.AssemblyInfo.cs
+D:\project\authSample\CookeAuthSample\obj\Debug\netcoreapp2.0\CookeAuthSample.dll
+D:\project\authSample\CookeAuthSample\obj\Debug\netcoreapp2.0\CookeAuthSample.pdb

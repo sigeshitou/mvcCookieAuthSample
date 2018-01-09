@@ -1,0 +1,10 @@
+D:\project\authSample\JwtAuthSample\bin\Debug\netcoreapp2.0\JwtAuthSample.deps.json
+D:\project\authSample\JwtAuthSample\bin\Debug\netcoreapp2.0\JwtAuthSample.runtimeconfig.json
+D:\project\authSample\JwtAuthSample\bin\Debug\netcoreapp2.0\JwtAuthSample.runtimeconfig.dev.json
+D:\project\authSample\JwtAuthSample\bin\Debug\netcoreapp2.0\JwtAuthSample.dll
+D:\project\authSample\JwtAuthSample\bin\Debug\netcoreapp2.0\JwtAuthSample.pdb
+D:\project\authSample\JwtAuthSample\obj\Debug\netcoreapp2.0\JwtAuthSample.csproj.CoreCompileInputs.cache
+D:\project\authSample\JwtAuthSample\obj\Debug\netcoreapp2.0\JwtAuthSample.AssemblyInfoInputs.cache
+D:\project\authSample\JwtAuthSample\obj\Debug\netcoreapp2.0\JwtAuthSample.AssemblyInfo.cs
+D:\project\authSample\JwtAuthSample\obj\Debug\netcoreapp2.0\JwtAuthSample.dll
+D:\project\authSample\JwtAuthSample\obj\Debug\netcoreapp2.0\JwtAuthSample.pdb
