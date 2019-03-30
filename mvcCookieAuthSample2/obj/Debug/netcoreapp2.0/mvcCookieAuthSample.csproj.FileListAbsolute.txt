@@ -19,3 +19,13 @@ D:\project\authSample\mvccookieauthsample2\obj\Debug\netcoreapp2.0\mvcCookieAuth
 D:\project\authSample\mvccookieauthsample2\obj\Debug\netcoreapp2.0\mvcCookieAuthSample.dll
 D:\project\authSample\mvccookieauthsample2\obj\Debug\netcoreapp2.0\mvcCookieAuthSample.pdb
 D:\project\authSample\mvcCookieAuthSample2\obj\Debug\netcoreapp2.0\mvcCookieAuthSample.csprojResolveAssemblyReference.cache
+F:\GitProject\authSample - 副本\mvcCookieAuthSample2\bin\Debug\netcoreapp2.0\mvcCookieAuthSample.deps.json
+F:\GitProject\authSample - 副本\mvcCookieAuthSample2\bin\Debug\netcoreapp2.0\mvcCookieAuthSample.runtimeconfig.json
+F:\GitProject\authSample - 副本\mvcCookieAuthSample2\bin\Debug\netcoreapp2.0\mvcCookieAuthSample.runtimeconfig.dev.json
+F:\GitProject\authSample - 副本\mvcCookieAuthSample2\bin\Debug\netcoreapp2.0\mvcCookieAuthSample.dll
+F:\GitProject\authSample - 副本\mvcCookieAuthSample2\bin\Debug\netcoreapp2.0\mvcCookieAuthSample.pdb
+F:\GitProject\authSample - 副本\mvcCookieAuthSample2\obj\Debug\netcoreapp2.0\mvcCookieAuthSample.csproj.CoreCompileInputs.cache
+F:\GitProject\authSample - 副本\mvcCookieAuthSample2\obj\Debug\netcoreapp2.0\mvcCookieAuthSample.AssemblyInfoInputs.cache
+F:\GitProject\authSample - 副本\mvcCookieAuthSample2\obj\Debug\netcoreapp2.0\mvcCookieAuthSample.AssemblyInfo.cs
+F:\GitProject\authSample - 副本\mvcCookieAuthSample2\obj\Debug\netcoreapp2.0\mvcCookieAuthSample.dll
+F:\GitProject\authSample - 副本\mvcCookieAuthSample2\obj\Debug\netcoreapp2.0\mvcCookieAuthSample.pdb

@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using System.Security.Claims;
 using mvcCookieAuthSample.ViewModels;
 using Microsoft.AspNetCore.Identity;
+using IdentityServer4.Services;
 
 namespace mvcCookieAuthSample.Controllers
 {
@@ -18,6 +19,14 @@ namespace mvcCookieAuthSample.Controllers
     {
         private UserManager<ApplicationUser> _userManager;
         private SignInManager<ApplicationUser> _signInManager;
+
+        private IIdentityServerInteractionService _interaction;
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, IIdentityServerInteractionService interaction)
+        {
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _interaction = interaction;
+        }
 
         private IActionResult RedirectToLoacl(string returnUrl)
         {
@@ -37,12 +46,7 @@ namespace mvcCookieAuthSample.Controllers
             }
         }
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
-        {
-            _userManager = userManager;
-            _signInManager = signInManager;
-        }
-
+      
 
         public IActionResult Register(string returnUrl = null)
         {
@@ -89,40 +93,58 @@ namespace mvcCookieAuthSample.Controllers
         {
             if (ModelState.IsValid)
             {
+                
                 ViewData["ReturnUrl"] = returnUrl;
-                var user = await _userManager.FindByEmailAsync(loginViewModel.Email);
+                var user =await _userManager.FindByEmailAsync(loginViewModel.Email);
                 if (user == null)
                 {
-                    ModelState.AddModelError(nameof(loginViewModel.Email), "Email not exists");
+                    ModelState.AddModelError(nameof(loginViewModel.Email), "Eamil not exists");
                 }
                 else
                 {
-                    await _signInManager.SignInAsync(user, new AuthenticationProperties { IsPersistent = true });
-                    return RedirectToLoacl(returnUrl);
+
+                    if (await _userManager.CheckPasswordAsync(user, loginViewModel.Password))
+                    {
+                        AuthenticationProperties props = null;
+                        if (loginViewModel.RememberMe)
+                        {
+                            props = new AuthenticationProperties
+                            {
+                                IsPersistent = true,
+                                ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(30)
+                            };
+
+                        }
+
+
+                        await _signInManager.SignInAsync(user, props);
+                        if (_interaction.IsValidReturnUrl(returnUrl))
+                        {
+                            return Redirect(returnUrl);
+                        }
+                        else
+                        {
+                            return Redirect("/");
+                        }
+
+                    }
+                    else
+                    {
+                        ModelState.AddModelError(nameof(loginViewModel.Email), "Wrong PassWord");
+
+                    }
+                 
                 }
             }
 
-            return View();
+            return View(loginViewModel);
         }
 
-        public IActionResult MakeLogin()
-        {
-            
-            var claims = new List<Claim>
-            {
-                new Claim(ClaimTypes.Name,"jesse"),
-                new Claim(ClaimTypes.Role, "admin")
-            };
-
-            var claimIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
-            HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimIdentity));
-
-            return Ok();
-        }
+       
 
         public async Task<IActionResult> Logout()
         {
-            await _signInManager.SignOutAsync();
+           await HttpContext.SignOutAsync();
             return RedirectToAction("Index", "Home");
         }
 

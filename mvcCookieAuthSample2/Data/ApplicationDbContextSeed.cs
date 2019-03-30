@@ -12,19 +12,37 @@ namespace mvcCookieAuthSample.Data
     {
         private UserManager<ApplicationUser> _userManager;
 
+        private RoleManager<ApplicationUserRole> _roleManager;
         public async Task SeedAsync(ApplicationDbContext context, IServiceProvider services)
         {
+            if (!context.Roles.Any())
+            {
+                _roleManager = services.GetRequiredService<RoleManager<ApplicationUserRole>>();
+
+                var role = new ApplicationUserRole() {Name = "Administrators", NormalizedName = "Administrators" };
+                var result = await _roleManager.CreateAsync(role);
+                if (!result.Succeeded)
+                {
+                    throw new Exception("初始默认角色失败"+result.Errors.SelectMany(e=>e.Description));
+                }
+            }
             if (!context.Users.Any())
             {
                 _userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
-
+               
                 var defaultUser = new ApplicationUser {
                     UserName="Administrator",
                     Email ="jessetalk@163.com",
-                    NormalizedUserName ="admin"
+                    NormalizedUserName ="admin",
+                    SecurityStamp="admin",
+                    Avatar= "http://www.jjyc.org/Scripts/jjyc2017/kindeditor/attached/image/20161023/20161023210006_1848.png"
+
                 };
 
-                var result = await _userManager.CreateAsync(defaultUser, "Password$123");
+               
+             
+                var result = await _userManager.CreateAsync(defaultUser, "123456");
+                await _userManager.AddToRoleAsync(defaultUser, "Administrators");
                 if (!result.Succeeded)
                 {
                     throw new Exception("初始默认用户失败");

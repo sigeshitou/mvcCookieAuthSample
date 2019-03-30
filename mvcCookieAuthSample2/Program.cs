@@ -16,7 +16,8 @@ namespace mvcCookieAuthSample
         public static void Main(string[] args)
         {
             BuildWebHost(args)
-                .MigrateDbContext<ApplicationDbContext>((context, services) => {
+                .MigrateDbContext<ApplicationDbContext>((context, services) =>
+                {
                     new ApplicationDbContextSeed().SeedAsync(context, services)
                     .Wait();
                 })
@@ -25,6 +26,7 @@ namespace mvcCookieAuthSample
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseUrls("http://localhost:5000")
                 .UseEnvironment("Development")
                 .UseStartup<Startup>()
                 .Build();
